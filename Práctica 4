@@ -1,0 +1,64 @@
+int B;
+int BB;
+int BBB;
+int T=2;
+int TT=3;
+int TTT=4;
+int C=5;
+int CC=6;
+int CCC=7;
+void setup() {
+  pinMode(B,INPUT_PULLUP);
+  pinMode(BB,INPUT_PULLUP);
+  pinMode(BBB,INPUT_PULLUP);
+  pinMode(C,OUTPUT);
+   pinMode(CC,OUTPUT);
+    pinMode(CCC,OUTPUT);
+
+}
+
+void loop() {
+B= digitalRead(T);
+ BB= digitalRead(TT);
+BBB= digitalRead(TTT);
+
+
+if(B && BB &&!BBB){
+  digitalWrite(C,1);
+  digitalWrite(CC,0);
+  digitalWrite(CCC,0);
+}
+if(B && !BB && BBB){
+  digitalWrite(CC,1);
+  digitalWrite(C,0);
+  digitalWrite(CCC,0);
+  
+}
+if(!B && BB && BBB) {
+  digitalWrite(CCC,1);
+  digitalWrite(C,0);
+  digitalWrite(CC,0);
+
+}
+if(!B && BB &&!BBB){
+  digitalWrite(C,1);
+  digitalWrite(CC,0);
+  digitalWrite(CCC,1);
+}
+if(B && !BB && !BBB){
+  digitalWrite(CC,1);
+  digitalWrite(C,0);
+  digitalWrite(CCC,1);
+  
+}
+if(!B && !BB && BBB) {
+  digitalWrite(CCC,0);
+  digitalWrite(C,1);
+  digitalWrite(CC,1);
+}
+if(!B && !BB && !BBB) {
+  digitalWrite(CCC,1);
+  digitalWrite(C,1);
+  digitalWrite(CC,1);
+}
+}
